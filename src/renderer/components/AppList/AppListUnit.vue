@@ -22,7 +22,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   .app-list-unit {
     height: 80px;
     width: 250px;
