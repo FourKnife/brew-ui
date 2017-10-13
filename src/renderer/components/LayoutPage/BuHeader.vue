@@ -2,7 +2,12 @@
   <div class="header">
     <span class="logo">BREW-UI</span>
     <div>
-      <el-input :value='search'></el-input>
+      <el-input 
+        placeholder="请输入软件名称"
+        icon="search"
+        v-model="search"
+        :on-icon-click="handleIconClick"
+      ></el-input>
     </div>
   </div>
 </template>
@@ -13,6 +18,11 @@
       return {
         search: '',
       };
+    },
+    methods: {
+      handleIconClick(ev) {
+        console.log(ev);
+      },
     },
   };
 </script>
