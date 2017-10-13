@@ -49,6 +49,10 @@ let rendererConfig = {
         })
       },
       {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.html$/,
         use: 'vue-html-loader'
       },
@@ -135,7 +139,7 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node']
+    extensions: ['.js', '.vue', '.json', '.css', '.node', '.scss']
   },
   target: 'electron-renderer'
 }
