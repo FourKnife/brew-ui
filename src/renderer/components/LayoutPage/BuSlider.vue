@@ -32,10 +32,10 @@
   @import '~@/style/_color';
 
   .slider {
-    width: 120px;
     height: 100%;
     background-color: $color-primary;
     .item {
+      width: 120px;
       height: 40px;
       line-height: 40px;
       color: $white;
