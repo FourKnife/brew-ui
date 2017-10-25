@@ -1,12 +1,15 @@
 <template>
   <div class="intalled-list">
     <h2>已安装</h2>
-    <installed-unit v-for="item in appList" :item="item"></installed-unit>
+    <div class="content">
+      <installed-unit v-for="item in appList" :item="item"></installed-unit>
+    </div>
     <el-pagination
       small
       layout="prev, pager, next"
       :total="50"
       @current-change="changePage"
+      class="pull-right"
     >
     </el-pagination>
   </div>
@@ -20,21 +23,31 @@
     data() {
       return {
         pageNo: 1,
-        pageSize: 10,
+        pageSize: 8,
       };
     },
     computed: {
       appList() {
         return this.$store.state.Apps.appList;
       },
+    },
+    methods: {
       changePage(val) {
-        console.log(val);
         this.pageNo = val;
-        return this.pageNo;
+        this.$store.dispatch('getLocalAppListPage', { pageNo: val, pageSize: this.pageSize });
       },
     },
     created() {
-      return this.$store.dispatch('getLocalAppListPage');
+      return this.$store.dispatch('getLocalAppListPage', { pageNo: this.pageNo, pageSize: this.pageSize });
     },
   };
 </script>
+
+<style lang="scss">
+  .intalled-list {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+</style>

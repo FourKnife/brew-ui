@@ -13,7 +13,13 @@
 </script>
 
 <style lang="scss">
+  @import '~@/style/_color';
   .installed-unit {
     display: flex;
+    border: 1px solid $color-border;
+    height: 60px;
+    &:not(:first-child) {
+      border-top: 0;
+    }
   }
 </style>

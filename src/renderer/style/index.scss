@@ -12,3 +12,11 @@ a {
   text-decoration: none;
   color: $color-link;
 }
+
+.pull-right {
+  float: right;
+  &:after {
+    content: "";
+    clear: both;
+  }
+}
