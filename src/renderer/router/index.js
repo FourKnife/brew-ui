@@ -8,18 +8,12 @@ export default new Router({
     {
       path: '/',
       name: '',
-      component: require('@/components/LayoutPage'),
-      children: [
-        {
-          path: 'installed',
-          name: 'installed',
-          component: require('@/components/Installed'),
-        },
-      ],
+      component: require('@/components/LandingPage'),
     },
     {
-      path: '/help',
-      component: require('@/components/LandingPage'),
+      path: '/layout',
+      name: 'layout',
+      component: require('@/components/LayoutPage'),
     },
     {
       path: '*',
