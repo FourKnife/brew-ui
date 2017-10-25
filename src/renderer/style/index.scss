@@ -1,0 +1,31 @@
+@import './_color.scss';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+}
+
+.pull-right {
+  float: right;
+  &:after {
+    content: "";
+    clear: both;
+  }
+}
+
+.abs-right {
+  position: absolute;
+  right: 0;
+}
+
+.flex-1 {
+  flex: 1;
+}
