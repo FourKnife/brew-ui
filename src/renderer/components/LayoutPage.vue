@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="layout">
     <bu-header></bu-header>
-    <bu-slider></bu-slider>
+    <div class="body">
+      <bu-slider></bu-slider>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -12,5 +15,20 @@
   export default {
     name: 'layout',
     components: { BuHeader, BuSlider },
+    created() {
+      // console.log(@);
+    },
   };
 </script>
+
+<style lang="scss">
+  .layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .body {
+      flex: 1;
+      display: flex;
+    }
+  }
+</style>
