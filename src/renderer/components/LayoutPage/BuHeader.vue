@@ -4,9 +4,11 @@
     <div>
       <el-input 
         placeholder="请输入软件名称"
-        icon="search"
+        suffix-icon="el-icon-search"
         v-model="search"
-        :on-icon-click="handleIconClick"
+        :fetch-suggestions="suggest"
+        @select="handleSelect"
+        @keyup.enter.native="suggest"
       ></el-input>
     </div>
   </div>
@@ -20,8 +22,12 @@
       };
     },
     methods: {
-      handleIconClick(ev) {
-        console.log(ev);
+      suggest(key, cb) {
+        console.log(key);
+        cb('111');
+      },
+      handleSelect(item) {
+        console.log(item);
       },
     },
   };

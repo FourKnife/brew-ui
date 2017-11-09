@@ -24,7 +24,6 @@
       return {
         pageNo: 1,
         pageSize: 8,
-        uninstallList: this.$store.state.Apps.uninstallList,
       };
     },
     computed: {
